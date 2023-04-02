@@ -1,8 +1,10 @@
 import React, { useRef, useState } from "react";
 import {
   Animated,
+  Dimensions,
   Image,
   ImageBackground,
+  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -36,6 +38,15 @@ export default function HomeScreen(): JSX.Element {
         HEADER_SCROLL_DISTANCE={HEADER_SCROLL_DISTANCE}
         image={require("../../assets/img/bg.png")}
       />
+      {Platform.select({android: (<ImageBackground
+        source={require("../../assets/img/co-bg.png")}
+        resizeMode="stretch"
+        style={[styles.introContainerShape, {
+          position: 'absolute',
+          top: (HEADER_MAX_HEIGHT- 55),
+          right: 0
+        }]}
+      />)}) }
       <ScrollView
         contentContainerStyle={styles.introContainer}
         scrollEventThrottle={16}
@@ -44,11 +55,14 @@ export default function HomeScreen(): JSX.Element {
           { useNativeDriver: false }
         )}
       >
-        <ImageBackground
+        {Platform.select({ios: (<ImageBackground
           source={require("../../assets/img/co-bg.png")}
           resizeMode="stretch"
-          style={styles.introContainerShape}
-        />
+          style={[styles.introContainerShape, {
+            position: 'absolute',
+            top: -50,
+          }]}
+        />)}) }
         <View
           style={{
             paddingHorizontal: 20.0,
@@ -96,11 +110,11 @@ export default function HomeScreen(): JSX.Element {
             style={[
               {
                 backgroundColor: "#030737",
-                height: 77,
+                height: 65,
                 justifyContent: "center",
                 alignItems: "center",
-                flex: 0.7,
-                borderRadius: 77 / 2,
+                flex: 0.9,
+                borderRadius: 65 / 2,
                 shadowColor: "#030737",
                 shadowOffset: {
                   width: 0,
@@ -112,7 +126,7 @@ export default function HomeScreen(): JSX.Element {
                 elevation: 6,
               },
               continueClicked?{
-                width: 77,
+                width: 65,
                 flex: 0
               }:{},
             ]}
@@ -143,10 +157,10 @@ export default function HomeScreen(): JSX.Element {
             <TouchableOpacity
               style={{
                 backgroundColor: constansts.primaryColor,
-                height: 77,
+                width:65,
+                height: 65,
                 justifyContent: "center",
                 alignItems: "center",
-                flex: 0.2,
                 borderRadius: 50,
               }}
             >
@@ -154,8 +168,7 @@ export default function HomeScreen(): JSX.Element {
                 source={require("../../assets/img/G-logo.png")}
                 style={{
                   resizeMode: "contain",
-                  width: "90%",
-                  height: 45,
+                  width: "50%",
                 }}
               />
             </TouchableOpacity>
@@ -172,6 +185,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "flex-end",
+    width: Dimensions.get('window').width,
   },
   image: {
     flex: 1,
@@ -181,18 +195,22 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "100%",
     justifyContent: "center",
+    zIndex: -0,
+    elevation: -0,
   },
   introContainer: {
-    backgroundColor: "#ffffff",
+
     marginTop: HEADER_MAX_HEIGHT - 5,
-    width: "100%",
+    width: Dimensions.get('window').width,
     flex: 2,
+    zIndex: 2,
+    elevation: 2,
+    overflow: 'visible',
   },
   introContainerShape: {
     height: 390,
     width: "100%",
     position: "absolute",
     top: 0,
-    marginTop: -50,
   },
 });

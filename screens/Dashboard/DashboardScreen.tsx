@@ -2,6 +2,7 @@ import React from "react";
 import {
   Image,
   Linking,
+  Platform,
   SafeAreaView,
   ScrollView,
   Text,
@@ -13,6 +14,7 @@ import { constansts } from "../../lib/constants";
 import { ParamListBase, useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
+import Constants from 'expo-constants';
 
 export default function DashboardScreen() {
 
@@ -65,6 +67,7 @@ export default function DashboardScreen() {
     <SafeAreaView
       style={{
         flex: 1,
+        paddingTop: Platform.select({android:Constants.statusBarHeight, ios: 0}),
         alignItems: "center",
         backgroundColor: constansts.tertiaryColor,
       }}
