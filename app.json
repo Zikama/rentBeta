@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
+    "name": "RentBeta",
+    "slug": "RentBeta",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#FCB200"
     },
     "assetBundlePatterns": [
       "**/*"
