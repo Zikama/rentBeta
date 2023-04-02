@@ -1,9 +1,9 @@
-import { View, Text, SafeAreaView } from 'react-native'
-import React from 'react'
+import { View, Text, SafeAreaView } from "react-native";
+import React from "react";
+import { StatusBar } from "expo-status-bar";
 
 export default function SettingsScreen() {
   return (
-
     <SafeAreaView
       style={{
         flex: 1,
@@ -11,9 +11,8 @@ export default function SettingsScreen() {
         alignItems: "center",
       }}
     >
-
+      <StatusBar style="dark" />
       <Text>SettingsScreen</Text>
     </SafeAreaView>
-
-  )
+  );
 }

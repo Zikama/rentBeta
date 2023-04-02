@@ -12,6 +12,7 @@ import Header from "../../components/Dashboard/Header";
 import { constansts } from "../../lib/constants";
 import { ParamListBase, useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StatusBar } from "expo-status-bar";
 
 export default function DashboardScreen() {
 
@@ -68,6 +69,7 @@ export default function DashboardScreen() {
         backgroundColor: constansts.tertiaryColor,
       }}
     >
+    <StatusBar style='dark'/>
       <Header />
       <ScrollView
         style={{

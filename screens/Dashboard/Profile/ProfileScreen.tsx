@@ -1,5 +1,6 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
+import { StatusBar } from 'expo-status-bar'
 
 export default function ProfileScreen() {
   return (
@@ -11,6 +12,7 @@ export default function ProfileScreen() {
         alignItems: "center",
       }}
     >
+    <StatusBar style='dark'/>
 
       <Text>ProfileScreen</Text>
     </SafeAreaView>

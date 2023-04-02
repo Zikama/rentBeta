@@ -1,5 +1,6 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
+import { StatusBar } from 'expo-status-bar'
 
 export default function SearchScreen() {
   return (
@@ -10,6 +11,7 @@ export default function SearchScreen() {
         alignItems: "center",
       }}
     >
+    <StatusBar style='dark'/>
       <Text>SearchScreen</Text>
 </SafeAreaView>
   )

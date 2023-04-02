@@ -15,6 +15,7 @@ import { ParamListBase, useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import * as Haptics from "expo-haptics"
 import { constansts } from "../../lib/constants";
+import { StatusBar } from "expo-status-bar";
 
 const HEADER_MAX_HEIGHT = 350;
 const HEADER_MIN_HEIGHT = 250;
@@ -27,6 +28,7 @@ export default function HomeScreen(): JSX.Element {
 
   return (
     <View style={styles.container}>
+    <StatusBar style='light'/>
       <DynamicHeader
         scrollY={scrollY}
         HEADER_MAX_HEIGHT={HEADER_MAX_HEIGHT}

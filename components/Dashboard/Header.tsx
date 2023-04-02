@@ -21,6 +21,8 @@ export default function Header() {
         placeholder="Search"
         returnKeyType="done"
         keyboardAppearance="default"
+        placeholderTextColor={'#777'}
+        keyboardType='default'
           style={{
             flex: 0.94,
             height: 40,
